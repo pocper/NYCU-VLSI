@@ -1,0 +1,36 @@
+
+module PATTERN(block_header,hash_result,Block);
+
+//------------------------------
+//	I/O Pors
+//------------------------------
+output reg [639:0] block_header;
+input [255:0] hash_result,Block;
+
+
+initial begin
+	block_header = {
+	32'h1DAC2B7C,32'hFFFF001D, 32'h29AB5F49, 
+	256'h4B1E5E4A_3A9FB8AA_888A5132_7FC81BC3_67768F61_7AC72C3E_7A7B12B2_3BA3EDFD, 
+	256'h00000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000,
+	32'h01000000
+	};
+
+	#2000;  // 20*10ps = 200ps --> 5GHz
+	block_header = {
+	32'h01E36299,32'hFFFF001D,32'h61BC6649,
+	256'h57233E0E_CDB606E8_540BF7B1_7BA1A3C3_1FEE1467_BBBE680E_1E4BA744_982051FD,
+	256'h00000000_68D61900_E15A089C_931E8365_AE63F74F_C1A6A246_B6F1B372_6FE28C0A,
+	32'h01000000
+	};
+	#5000;
+	$finish;
+end
+
+
+
+	
+
+
+
+endmodule
