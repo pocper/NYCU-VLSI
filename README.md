@@ -133,15 +133,15 @@
      - 設計指標評估：針對整合後之設計，評估其最大運作頻率、功耗表現及晶片佔用面積
 
 10. Lab08 - SoC TPU
-   - AlphaGo SoC 設計流程推演
-     - 模擬 AlphaGo 晶片專案負責人角色，從原始規格 (Spec) 出發，推導至晶片實作，詳細說明大尺度 SoC 的設計流程與架構決策
-   - (Bonus) TPU 演進架構驗證
-     - 以 Google TPU v2、v3、v4 為例，透過手工推導過程，驗證不同世代 TPU 架構在處理效能、記憶體頻寬與互連技術上的演進與改進
+    - AlphaGo SoC 設計流程推演
+      - 模擬 AlphaGo 晶片專案負責人角色，從原始規格 (Spec) 出發，推導至晶片實作，詳細說明大尺度 SoC 的設計流程與架構決策
+    - (Bonus) TPU 演進架構驗證
+      - 以 Google TPU v2、v3、v4 為例，透過手工推導過程，驗證不同世代 TPU 架構在處理效能、記憶體頻寬與互連技術上的演進與改進
 
 11. Lab09 - Bitcoin Miner
-   - 程式來源：參考 [知乎專欄：比特幣挖礦與 SHA-256 硬體實作](https://zhuanlan.zhihu.com/p/550557623) 之程式架構
-   - 環境建置：建立 Verilog 模擬環境，完成該組合邏輯展開式礦機核心之編譯
-   - 功能驗證：透過 640-bit 區塊標頭輸入，驗證雙重 SHA-256 運算路徑與端序轉換之正確性
+    - 程式來源：參考 [知乎專欄：比特幣挖礦與 SHA-256 硬體實作](https://zhuanlan.zhihu.com/p/550557623) 之程式架構
+    - 環境建置：建立 Verilog 模擬環境，完成該組合邏輯展開式礦機核心之編譯
+    - 功能驗證：透過 640-bit 區塊標頭輸入，驗證雙重 SHA-256 運算路徑與端序轉換之正確性
 
 12. Final Project - Systolic Array
     - 程式來源：參考並引用自 [github - systolic_array_matrix_multiplier](https://github.com/debtanu09/systolic_array_matrix_multiplier) 之硬體描述語言架構
@@ -191,7 +191,7 @@
     cd nycu-vlsi/lab07_system_chip_design/jpeg_decoder
     iverilog -g2012 -o jpeg_decoder_sim.vvp TESTBENCH.sv
     vvp jpeg_decoder_sim.vvp
-    # gtkwave FIFO_sim.vcd
+    # gtkwave jpeg_decoder_sim.vcd
    ```
 
 5. Lab09 - Bitcoin Miner
@@ -224,9 +224,9 @@
 
 - 數位硬體描述與模擬 (Digital Logic & Verification)
   - Verilog / SystemVerilog：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 的硬體架構實作
-  - Cadence irun (Xcelium)：作為數位邏輯模擬
+  - Cadence irun (Xcelium)：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 作為數位邏輯模擬
   - Icarus Verilog (iverilog) & GTKWave：作為數位邏輯模擬與波形觀測工具
 
 - 數位綜合與佈局 (Synthesis & Implementation)：
-  - Synopsys Design Compiler (DC)：用於將 RTL 轉換為門級網表 (Gate-level Netlist)，並結合 ASAP7 製程進行功耗與面積評估
-  - Xilinx Vivado：用於 Final Project，確保設計在 FPGA 架構下的可合成性
+  - Synopsys Design Compiler (DC)：用於 Lab 09 及 Final Project 
+  - Xilinx Vivado：用於 Final Project
