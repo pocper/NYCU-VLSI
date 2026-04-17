@@ -147,8 +147,28 @@
     - 程式來源：參考並引用自 [github - systolic_array_matrix_multiplier](https://github.com/debtanu09/systolic_array_matrix_multiplier) 之硬體描述語言架構
     - 設計目標：實現一個 $4 \times 4$ 的脈動陣列架構，用於執行高效能的矩陣乘法運算（包含 8 組 32-bit 輸入與 16 組輸出） 
 
-## 編譯
-1. Lab01 - Simple Logic Design
+## 開發環境與工具 (Development Environment & Tools)
+### 製程技術庫 (Process Design Kits, PDKs)
+1. 7nm_TT：用於 Lab 01 
+2. TSMC 0.18um (T18)：應用於Lab 04, 05, 06 與 Midterm #2
+3. ASAP7 (7nm Predictive PDK)：用於 Lab 09 與 Final Project
+
+### EDA 設計工具(EDA Tools)
+- 類比電路模擬與佈局 (Analog Design & Layout)：
+  - Synopsys HSPICE：用於 Lab 01 的電路層級精確模擬 
+  - Cadence Virtuoso：用於 Lab 04, 05, 06 與 Midterm #2 的實體佈局 (Layout) 繪製與驗證
+
+- 數位硬體描述與模擬 (Digital Logic & Verification)
+  - Verilog / SystemVerilog：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 的硬體架構實作
+  - Cadence irun (Xcelium)：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 作為數位邏輯模擬
+  - Icarus Verilog (iverilog) & GTKWave：作為數位邏輯模擬與波形觀測工具
+
+- 數位綜合與佈局 (Synthesis & Implementation)：
+  - Synopsys Design Compiler (DC)：用於 Lab 09 及 Final Project 
+  - Xilinx Vivado：用於 Final Project
+
+## 快速上手 (Getting Started)
+1. Lab01 - Simple Logic Design (HSPICE)
     ``` bash
     cd nycu-vlsi/01_lab01_logic_gate
     hspice -i ./and2/and2_tb.sp -o and2_result
@@ -188,7 +208,7 @@
 
 4. Lab07 - System Chip Design
    ``` bash
-    cd nycu-vlsi/lab07_system_chip_design/jpeg_decoder
+    cd nycu-vlsi/09_lab07_system_chip_design/jpeg_decoder
     iverilog -g2012 -o jpeg_decoder_sim.vvp TESTBENCH.sv
     vvp jpeg_decoder_sim.vvp
     # gtkwave jpeg_decoder_sim.vcd
@@ -210,23 +230,3 @@
    ./02_SYN/01_run_ptpx
    ./03_GATE/01_run_Gate
    ```
-
-## 設計開發環境(Design Environment)
-### 製程技術庫 (Process Design Kits, PDKs)
-1. 7nm_TT：用於 Lab 01 
-2. TSMC 0.18um (T18)：應用於Lab 04, 05, 06 與 Midterm #2
-3. ASAP7 (7nm Predictive PDK)：用於 Lab 09 與 Final Project
-
-### EDA 設計工具(EDA Tools)
-- 類比電路模擬與佈局 (Analog Design & Layout)：
-  - Synopsys HSPICE：用於 Lab 01 的電路層級精確模擬 
-  - Cadence Virtuoso：用於 Lab 04, 05, 06 與 Midterm #2 的實體佈局 (Layout) 繪製與驗證
-
-- 數位硬體描述與模擬 (Digital Logic & Verification)
-  - Verilog / SystemVerilog：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 的硬體架構實作
-  - Cadence irun (Xcelium)：用於 Lab 02, 03, 07, 09 及 Midterm #1, Final Project 作為數位邏輯模擬
-  - Icarus Verilog (iverilog) & GTKWave：作為數位邏輯模擬與波形觀測工具
-
-- 數位綜合與佈局 (Synthesis & Implementation)：
-  - Synopsys Design Compiler (DC)：用於 Lab 09 及 Final Project 
-  - Xilinx Vivado：用於 Final Project
